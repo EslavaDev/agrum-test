@@ -5,14 +5,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Programa de Colas</title>
+    <title>Concepto Mongo RealTime</title>
 </head>
 
-<body>
-    <h1>Programa de Colas</h1>
-
-
+<body onload="data()">
+    <h1>Concepto Mongo RealTime</h1>
+    <button type="submit" id="testing" onclick="data()">Traer Data Oprimir solo 1 vez</button>
+    <ul class="chatonline style-none" id="divUsuarios">
+    <li>
+        <a href="javascript:void(0)"> <span> </span></a>
+    </li>
+</ul>
+<script   src="https://code.jquery.com/jquery-3.3.1.min.js"   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="   crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="socket.io/socket.io.js"></script>
+
+    <script src="js/socket.jquery.js"></script>
     <script src="js/socket.js"></script>
 </body>
 

@@ -3,7 +3,8 @@ const Schema = mongoose.Schema;
 
 const TestSchemca = Schema({
   title: String,
-  description: String
+  description: String,
+  workgroup: String,
 });
 
 module.exports= mongoose.model('test', TestSchemca);

@@ -11,7 +11,7 @@ exports.saveUser = (req, res) => {
                 message: 'data Incorrecta',
             });
         }
-        getAll({ ok: true, title: response.title });
+        getAll({ ok: true, workgroup: response.workgroup });
         return res.json({
             ok: true,
             data: response,
@@ -21,7 +21,7 @@ exports.saveUser = (req, res) => {
 const getAll = (data) => {
     console.log('escucho data desde getAll');
     if (data.ok) {
-        Test.find({}).exec((err, db) => {
+        Test.find({workgroup:data.workgroup}).exec((err, db) => {
             if (err) {
                 return console.log('error')
             }
@@ -31,8 +31,10 @@ const getAll = (data) => {
 }
 
 exports.getAllFirs = (req, res) => {
+        const { id } = req.params;
+        console.log(id);
         console.log('escucho data desde');
-            return Test.find({}).exec((err, db) => {
+            return Test.find({workgroup: id}).exec((err, db) => {
                 if (err) {
                     return console.log('error')
                 }

@@ -1,10 +1,10 @@
 
 
-    function data(){axios.get('/v1/client', {
+    function data(){axios.get('/v1/saved/'+sala, {
     })
     .then(function (response) {
       console.log(response.data);
-      renderizarUsuarios(response.data)
+     renderizarUsuarios(response.data)
     })
     .catch(function (error) {
       console.log(error);
@@ -14,6 +14,9 @@ const socket = io();
 // Escuchar informacion
 socket.on('connect', () => {
   console.log('conectado al servidor');
+  socket.emit('sala', sala, (data) => {
+    console.log(data)
+  });
 });
 
 socket.on('disconnect', () => {
@@ -32,3 +35,7 @@ socket.on('getAllIo', (message) => {
   console.log('Servidor: ', message);
   renderizarUsuarios(message)
 });
+
+socket.on('listener', (message) => {
+  console.log(message)
+})

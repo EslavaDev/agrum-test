@@ -11,7 +11,7 @@ const test = require('../api/test');
 
 module.exports = (app) => {
   // Insert routes below
-  app.use('/v1/client', test);
+  app.use('/v1/saved', test);
 
 
   // All undefined asset or api routes should return a 404

@@ -5,13 +5,13 @@
 
 // Import Endpoints
 
-const test = require('../api/test');
+const test = require('../api/events');
 
 
 
 module.exports = (app) => {
   // Insert routes below
-  app.use('/v1/saved', test);
+  app.use('/v1/events', test);
 
 
   // All undefined asset or api routes should return a 404

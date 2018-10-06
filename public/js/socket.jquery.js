@@ -1,5 +1,5 @@
 const param = new URLSearchParams(window.location.search);
-const sala= param.get('sala');
+const room= param.get('room');
 const divUsuarios = $('#divUsuarios');
 
 function renderizarUsuarios(data) { // [{}, {}, {}]

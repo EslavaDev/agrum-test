@@ -2,12 +2,12 @@ const {io} = require('../');
 // const {EventEmitter} = require('events');
 // const event = new EventEmitter();
 const event = require('./event');
-const {getAllFirs} = require('../../api/test/test.controller');
+const {getAllFirs} = require('../../api/events/events.controller');
 let cliente = ''
 io.on('connection', client => {
   console.log('socket', client.id)
 
-  client.on('sala', (data, callback) => {
+  client.on('room', (data, callback) => {
 
     if (!data) {
       return callback({

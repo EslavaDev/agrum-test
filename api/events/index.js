@@ -1,5 +1,5 @@
 const { Router } = require('express');
-const controller = require('./test.controller');
+const controller = require('./events.controller');
 
 
 const router = new Router();

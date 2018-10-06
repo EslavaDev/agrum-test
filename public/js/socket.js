@@ -1,6 +1,6 @@
 
 
-    function data(){axios.get('/v1/saved/'+sala, {
+    function data(){axios.get('/v1/events/'+room, {
     })
     .then(function (response) {
       console.log(response.data);
@@ -14,7 +14,7 @@ const socket = io();
 // Escuchar informacion
 socket.on('connect', () => {
   console.log('conectado al servidor');
-  socket.emit('sala', sala, (data) => {
+  socket.emit('room', room, (data) => {
     console.log(data)
   });
 });

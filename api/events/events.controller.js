@@ -6,7 +6,7 @@ const service = require('./events.service');
 const Event = require('./events.model');
 
 async function addWorkgroup (auth, data) {
-   return new Promise((resolve, reject) => { 
+   return new Promise((resolve, reject) => {
        request('http://agrum-api.herokuapp.com/api/v1.0/devices?Authorization=bd6f8ce7-683e-4aa5-920d-cb927893f7b9&where={"token": "' + auth + '"}&populate', (err, res, body) => {
             if (err) { return reject(err); }
             const device = JSON.parse(body)

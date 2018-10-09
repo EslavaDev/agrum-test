@@ -26,7 +26,7 @@ routeConfig(app);
 
 
 mongoose.set('useCreateIndex', true);
-mongoose.connect('mongodb://localhost:27017/testingScoket', { useNewUrlParser: true })
+mongoose.connect('mongodb://localhost:27017/agrum', { useNewUrlParser: true })
   .then(() => {
     winston.info('Connected to Database Successfully');
     return server.listen(3000, (err) => {

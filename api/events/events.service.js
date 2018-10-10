@@ -1,21 +1,24 @@
-exports.create = (data, Test) => new Promise((resolve, reject) => {
-    return Test.create(data, (err, response) => {
+exports.create = (data, Event) => new Promise((resolve, reject) => {
+    return Event.create(data, (err, response) => {
     if (err) {
         return reject({
             ok: false,
-            message: 'data Incorrecta',
+            message: 'Error: incorrect data',
         });
     }
     return resolve({
-        ok: true, workgroup: response.workgroup
+        ok: true,
+        code: "CREATED",
+        data: response,
+        workgroup: response.workgroup
     });
 });
 });
 
-exports.getAll = (data, Test) => new Promise((resolve, reject) =>{
+exports.getAll = (data, Event) => new Promise((resolve, reject) =>{
     console.log('escucho data desde getAll');
     if (data.ok) {
-        return Test.find({workgroup:data.workgroup}).exec((err, db) => {
+        return Event.find({workgroup:data.workgroup}).exec((err, db) => {
             if (err) {
                 return reject({
                     ok: false,
@@ -31,6 +34,4 @@ exports.getAll = (data, Test) => new Promise((resolve, reject) =>{
     return reject({
         ok:false
     })
-
-
 });

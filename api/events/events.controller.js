@@ -1,6 +1,4 @@
 const event = require('../../server/socket/event');
-// const {EventEmitter} = require('events');
-// const event = new EventEmitter();
 const service = require('./events.service');
 const Test = require('./events.model');
 exports.saveUser = async(req, res) => {

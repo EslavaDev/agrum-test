@@ -2,7 +2,6 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const eventsSocketSchema = Schema({
-  workgroup: String,
   id: {
     type: ObjectId,
     index: true,

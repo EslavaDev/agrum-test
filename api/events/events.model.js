@@ -7,6 +7,14 @@ const eventsSocketSchema = Schema({
     index: true,
     unique: true
   },
+  createdAt: { 
+    type: Date,
+    default: Date.now
+  },
+  updatedAt: { 
+    type: Date,
+    default: Date.now
+  },
 }, { strict: false,  versionKey: false, _id: false, id:true });
 
-module.exports= mongoose.model('eventsSocket', eventsSocketSchema);
+module.exports= mongoose.model('event', eventsSocketSchema, 'event');
